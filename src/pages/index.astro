@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
-console.log(books);
 ---
 
 <Layout title="Dev Books">
@@ -28,7 +27,8 @@ console.log(books);
                     class="mb-2 xl:mb-0 transition hover:scale-110"
                   >
                     <img
-                      src={`./${img}`}
+                      transition:name={`img-${slug}`}
+                      src={`/${img}`}
                       alt={title}
                       class="w-[200px] h-[300px] rounded-lg"
                     />
